@@ -1,0 +1,144 @@
+<ipsec>
+  <phase1>
+    <ikeid>1</ikeid>
+    <iketype>ikev2</iketype>
+    <interface>opt1</interface>
+    <protocol>inet</protocol>
+    <myid_type>myaddress</myid_type>
+    <peerid_type>peeraddress</peerid_type>
+    <peerid_data>@opnsense-b</peerid_data>
+    <encryption-algorithm>
+      <name>aes128gcm16</name>
+    </encryption-algorithm>
+    <lifetime>28800</lifetime>
+    <authentication_method>pubkey</authentication_method>
+    <descr>OPNsense-B</descr>
+    <local-kpref>f5a5c8c6-41e3-4ec6-b851-1d30af3e0b89</local-kpref>
+    <peer-kpref>618a6112-1594-496d-9fb6-b32cf6505ff0</peer-kpref>
+    <nat_traversal>on</nat_traversal>
+    <dhgroup>14</dhgroup>
+    <hash-algorithm>sha256</hash-algorithm>
+    <noinstallpolicy>1</noinstallpolicy>
+    <private-key/>
+    <remote-gateway>192.168.2.4</remote-gateway>
+  </phase1>
+  <phase2>
+    <ikeid>1</ikeid>
+    <uniqid>5c7cfa5e698c7</uniqid>
+    <mode>route-based</mode>
+    <lifetime>3600</lifetime>
+    <protocol>esp</protocol>
+    <tunnel_local>192.168.188.1</tunnel_local>
+    <tunnel_remote>192.168.188.2</tunnel_remote>
+    <encryption-algorithm-option>
+      <name>aes128gcm16</name>
+    </encryption-algorithm-option>
+    <hash-algorithm-option>hmac_sha256</hash-algorithm-option>
+    <reqid>1000</reqid>
+  </phase2>
+  <enable>1</enable>
+  <client/>
+  <auto_routes_disable>1</auto_routes_disable>
+</ipsec>
+<IPsec version="1.0.0">
+  <general>
+    <enabled/>
+  </general>
+  <keyPairs>
+    <keyPair uuid="f5a5c8c6-41e3-4ec6-b851-1d30af3e0b89">
+      <name>pk-a</name>
+      <keyType>rsa</keyType>
+      <publicKey>-----BEGIN PUBLIC KEY-----
+MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAzMEzd/fE9an6IImtqyPP
+TmH60W/i7AF+w00XyUo1+6UQJE+cpsPAEwmnaJ5r4cAOCFPmra68vYVifiha1Hla
+g8nspwiHJ4p5tUnyl6Xp4rIKAp0Z1QYEE5ckQV+ESvSg38lVRiDJxqyafSvdLsIQ
+8VVLUlABLyxaZ7pDee4X8/74/H4UcLA4pKMHtgVplKDXuOyGwLgqnvU2nbkXpKiC
++zZbtDwXy9gS4fub2BV8WNQ08ptSJG98ZFTXAM50eh0PA44l1AfJNR4B8pUeafP6
+pi/Aqezh3P0V7F4zzFnnpJSnqdYJp+q5SsxBTO5MtnS/Sf3ormU0o9w+ngz34b7X
+D6vhQAuGx2TE1by+M+6bJcHLy2sU1Bdj/6GwLlVXHDL9dAzFIMm5WDvoiCWyOAgh
+hy6kAv6qN6Kldmtxv2n4W9k5ob5djOoi169R5SYWYAo+ulgYLY0vw+jowu289/G0
+IaGomnZOUQ3LQdAfNMwL4s4+LEppE267dIHsiOzlzOoxQLCMpSwWQnPE9YJmGW3s
+hLeZB4cdK9wtYdsZTWGhhmNL67zyPxcMoqOefjXQN2eUzo+8SzKvx/MZKjx0sQge
+K1dWOctRaxYoaFTPBEMicTKzGTtPvQaWcjW727zG7eZ7MXbId9Ikb8T3T6D94Uea
+LUVTioQrgXYZALCEXh+Y8sMCAwEAAQ==
+-----END PUBLIC KEY-----
+</publicKey>
+      <privateKey>-----BEGIN RSA PRIVATE KEY-----
+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
+-----END RSA PRIVATE KEY-----
+</privateKey>
+      <keySize>4096</keySize>
+      <keyFingerprint>70:1f:da:c5:24:b0:1e:de:0a:e2:96:4a:65:e0:5a:78:6a:b8:3d:07</keyFingerprint>
+    </keyPair>
+    <keyPair uuid="618a6112-1594-496d-9fb6-b32cf6505ff0">
+      <name>pk-b</name>
+      <keyType>rsa</keyType>
+      <publicKey>-----BEGIN PUBLIC KEY-----
+MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAxd/zyLoFMUoG55mtfS48
+TVbT2AAtrnyD95v373FqTnuz4iDRwjIFiz+gDYcy+Z0M5F9M2S5BCzRU0EPfe+yI
+B5EOlohEkiJ2BFQHTVW6cPd0EYTDXIStf5Yq5lOWUy7T+Ej9ymcYHMv7rHMi+OaU
+eE8jyEWXbgBr2oYbePjqRlG2tnOC3tackNvMk38vamFjtmkut6pAH0uLjB+RQWq4
+50eYR1LWtJbt5TE4macZLCGXuRSNoE38wHVFfCE6EvuO6+2y6+7nzUqnB1tJRzv5
+50rePodsWp0ssjqc9tTj62l4YO0zN+MnQOc6GVFh0NIpgnOz/Ta7w6qDVvYdUtsi
+rRvdWVfjPCeyfg74ky0APd3YeemFRi9GDTNW0AWYI6kb5SGOvKinjNNIBZ+wFUwy
+sG/FBYRAYdsZUDufeLuoyebxgkGMSIGEITD9t3MWHv6OrcyIKeBc7boEyT+lzLox
+Pp5+hhk/BNu+lUBk4la2ElqQo118Hxi9l7z0kYtc6cpSZ90yvWLYb7H3eZDAFVfs
+YOgEDvB/wf5MRZvtUpkWfLZcm5oyzZ651Ol+u7sXD0izokkvMlFWLZCK39O78WX7
+7WYY5QKrAZcwenzmtepg1+je/DLUMG07W1Sk5QqLotps1HgeGTWHg/TNN7aIB99k
+QCM1cgCLBXE6SnQhe15Y6QMCAwEAAQ==
+-----END PUBLIC KEY-----
+</publicKey>
+      <privateKey/>
+      <keySize>4096</keySize>
+      <keyFingerprint>8c:dc:79:9c:36:16:c7:17:ac:6e:32:12:13:3c:87:e1:87:38:8b:ab</keyFingerprint>
+    </keyPair>
+  </keyPairs>
+</IPsec>
