@@ -1,53 +1,57 @@
-<ipsec>
-  <phase1>
-    <ikeid>1</ikeid>
-    <iketype>ikev2</iketype>
-    <interface>opt1</interface>
-    <protocol>inet</protocol>
-    <myid_type>myaddress</myid_type>
-    <peerid_type>peeraddress</peerid_type>
-    <peerid_data>@opnsense-b</peerid_data>
-    <encryption-algorithm>
-      <name>aes128gcm16</name>
-    </encryption-algorithm>
-    <lifetime>28800</lifetime>
-    <authentication_method>pubkey</authentication_method>
-    <descr>OPNsense-B</descr>
-    <local-kpref>f5a5c8c6-41e3-4ec6-b851-1d30af3e0b89</local-kpref>
-    <peer-kpref>618a6112-1594-496d-9fb6-b32cf6505ff0</peer-kpref>
-    <nat_traversal>on</nat_traversal>
-    <dhgroup>14</dhgroup>
-    <hash-algorithm>sha256</hash-algorithm>
-    <noinstallpolicy>1</noinstallpolicy>
-    <private-key/>
-    <remote-gateway>192.168.2.4</remote-gateway>
-  </phase1>
-  <phase2>
-    <ikeid>1</ikeid>
-    <uniqid>5c7cfa5e698c7</uniqid>
-    <mode>route-based</mode>
-    <lifetime>3600</lifetime>
-    <protocol>esp</protocol>
-    <tunnel_local>192.168.188.1</tunnel_local>
-    <tunnel_remote>192.168.188.2</tunnel_remote>
-    <encryption-algorithm-option>
-      <name>aes128gcm16</name>
-    </encryption-algorithm-option>
-    <hash-algorithm-option>hmac_sha256</hash-algorithm-option>
-    <reqid>1000</reqid>
-  </phase2>
-  <enable>1</enable>
-  <client/>
-  <auto_routes_disable>1</auto_routes_disable>
-</ipsec>
-<IPsec version="1.0.0">
-  <general>
-    <enabled/>
-  </general>
-  <keyPairs>
-    <keyPair uuid="f5a5c8c6-41e3-4ec6-b851-1d30af3e0b89">
-      <name>pk-a</name>
-      <keyType>rsa</keyType>
+<?xml version="1.0"?>
+<opnsense>
+  <version>11.2</version>
+  <ipsec>
+    <phase1>
+      <ikeid>1</ikeid>
+      <iketype>ikev2</iketype>
+      <interface>opt1</interface>
+      <protocol>inet</protocol>
+      <myid_type>myaddress</myid_type>
+      <peerid_type>peeraddress</peerid_type>
+      <peerid_data>@opnsense-b</peerid_data>
+      <encryption-algorithm>
+        <name>aes128gcm16</name>
+      </encryption-algorithm>
+      <lifetime>28800</lifetime>
+      <authentication_method>pubkey</authentication_method>
+      <descr>OPNsense-B</descr>
+      <local-kpref>f5a5c8c6-41e3-4ec6-b851-1d30af3e0b89</local-kpref>
+      <peer-kpref>618a6112-1594-496d-9fb6-b32cf6505ff0</peer-kpref>
+      <nat_traversal>on</nat_traversal>
+      <dhgroup>14</dhgroup>
+      <hash-algorithm>sha256</hash-algorithm>
+      <noinstallpolicy>1</noinstallpolicy>
+      <private-key/>
+      <remote-gateway>192.168.2.4</remote-gateway>
+    </phase1>
+    <phase2>
+      <ikeid>1</ikeid>
+      <uniqid>5c7cfa5e698c7</uniqid>
+      <mode>route-based</mode>
+      <lifetime>3600</lifetime>
+      <protocol>esp</protocol>
+      <tunnel_local>192.168.188.1</tunnel_local>
+      <tunnel_remote>192.168.188.2</tunnel_remote>
+      <encryption-algorithm-option>
+        <name>aes128gcm16</name>
+      </encryption-algorithm-option>
+      <hash-algorithm-option>hmac_sha256</hash-algorithm-option>
+      <reqid>1000</reqid>
+    </phase2>
+    <enable>1</enable>
+    <client/>
+    <auto_routes_disable>1</auto_routes_disable>
+  </ipsec>
+  <OPNsense>
+    <IPsec version="1.0.0">
+      <general>
+        <enabled/>
+      </general>
+      <keyPairs>
+        <keyPair uuid="f5a5c8c6-41e3-4ec6-b851-1d30af3e0b89">
+          <name>pk-a</name>
+          <keyType>rsa</keyType>
       <publicKey>-----BEGIN PUBLIC KEY-----
 MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAzMEzd/fE9an6IImtqyPP
 TmH60W/i7AF+w00XyUo1+6UQJE+cpsPAEwmnaJ5r4cAOCFPmra68vYVifiha1Hla
@@ -63,7 +67,7 @@ K1dWOctRaxYoaFTPBEMicTKzGTtPvQaWcjW727zG7eZ7MXbId9Ikb8T3T6D94Uea
 LUVTioQrgXYZALCEXh+Y8sMCAwEAAQ==
 -----END PUBLIC KEY-----
 </publicKey>
-      <privateKey>-----BEGIN RSA PRIVATE KEY-----
+          <privateKey>-----BEGIN RSA PRIVATE KEY-----
 MIIJKgIBAAKCAgEAzMEzd/fE9an6IImtqyPPTmH60W/i7AF+w00XyUo1+6UQJE+c
 psPAEwmnaJ5r4cAOCFPmra68vYVifiha1Hlag8nspwiHJ4p5tUnyl6Xp4rIKAp0Z
 1QYEE5ckQV+ESvSg38lVRiDJxqyafSvdLsIQ8VVLUlABLyxaZ7pDee4X8/74/H4U
@@ -115,13 +119,13 @@ RqX/S9OcjhAmn+/qZIMArgYos42wayNJ3InisQrFDYdBHLU+NKjWXIt+IFmQCUwP
 EKBityXPUxRd5kAtXvWZTPMv0DWnOn4Z4Oq1Apcpb42HB4jFq7ZrXBAQnG2Meg==
 -----END RSA PRIVATE KEY-----
 </privateKey>
-      <keySize>4096</keySize>
-      <keyFingerprint>70:1f:da:c5:24:b0:1e:de:0a:e2:96:4a:65:e0:5a:78:6a:b8:3d:07</keyFingerprint>
-    </keyPair>
-    <keyPair uuid="618a6112-1594-496d-9fb6-b32cf6505ff0">
-      <name>pk-b</name>
-      <keyType>rsa</keyType>
-      <publicKey>-----BEGIN PUBLIC KEY-----
+          <keySize>4096</keySize>
+          <keyFingerprint>70:1f:da:c5:24:b0:1e:de:0a:e2:96:4a:65:e0:5a:78:6a:b8:3d:07</keyFingerprint>
+        </keyPair>
+        <keyPair uuid="618a6112-1594-496d-9fb6-b32cf6505ff0">
+          <name>pk-b</name>
+          <keyType>rsa</keyType>
+          <publicKey>-----BEGIN PUBLIC KEY-----
 MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAxd/zyLoFMUoG55mtfS48
 TVbT2AAtrnyD95v373FqTnuz4iDRwjIFiz+gDYcy+Z0M5F9M2S5BCzRU0EPfe+yI
 B5EOlohEkiJ2BFQHTVW6cPd0EYTDXIStf5Yq5lOWUy7T+Ej9ymcYHMv7rHMi+OaU
@@ -136,9 +140,11 @@ YOgEDvB/wf5MRZvtUpkWfLZcm5oyzZ651Ol+u7sXD0izokkvMlFWLZCK39O78WX7
 QCM1cgCLBXE6SnQhe15Y6QMCAwEAAQ==
 -----END PUBLIC KEY-----
 </publicKey>
-      <privateKey/>
-      <keySize>4096</keySize>
-      <keyFingerprint>8c:dc:79:9c:36:16:c7:17:ac:6e:32:12:13:3c:87:e1:87:38:8b:ab</keyFingerprint>
-    </keyPair>
-  </keyPairs>
-</IPsec>
+          <privateKey/>
+          <keySize>4096</keySize>
+          <keyFingerprint>8c:dc:79:9c:36:16:c7:17:ac:6e:32:12:13:3c:87:e1:87:38:8b:ab</keyFingerprint>
+        </keyPair>
+      </keyPairs>
+    </IPsec>
+  </OPNsense>
+</opnsense>
