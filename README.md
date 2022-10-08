@@ -46,9 +46,11 @@ For all tests performed we collected the following relevant configuration data:
 Tests
 ==================================
 
+The list of tests performed with their primary settings below:
+
 * VTI_S2S_psk
     - IKEv2
-    - routed IPsec (VTI) 
+    - routed IPsec (VTI)
     - pre-shared-key authentication
     - tunnel 192.168.188.1 <-> 192.168.188.2
 * VTI_S2S_pubkey
@@ -63,7 +65,7 @@ Tests
     - tunnel 192.168.188.1 <-> 192.168.188.2
 * PB_S2S_psk_default
     - IKEv2
-    - policy based 
+    - policy based
     - pre-shared-key authentication
     - tunnel 192.168.111.0/24 <-> 192.168.112.0/24
     - tunnel 192.168.113.0/24 <-> 192.168.114.0/24
@@ -87,4 +89,12 @@ Tests
     - tunnel isolation selected
     - tunnel 192.168.111.0/24 <-> 192.168.112.0/24
     - tunnel 192.168.113.0/24 <-> 192.168.114.0/24
-    - tunnel fc00::1/28 <-> fc00::2/128 
+    - tunnel fc00::1/28 <-> fc00::2/128
+* PB_Mobile_IKEv1_Xauth
+    - IKEv1
+    - policy based
+    - xauth + local database    
+* PB_Mobile_IKEv2_EAPMSCHAP2
+    - IKEv2
+    - policy based
+    - eap-mschapv2
